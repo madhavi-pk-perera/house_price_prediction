@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Banguluru Price Predictor</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="title">House Price Predictor</div>
+        <form action="/"  method="POST">
+            <div class="form">
+                <div class="inputfield">
+                    <label for="sqft">Area (Square Feet)</label>
+                    <input class="input" type="text" name="sqft" required>
+                </div>
+                
+                
+                <div class="inputfield">
+                    <label for="location">Location</label>
+                    <input class="input" type="text" name="location" required>
+                </div>
+                <div class="inputfield">
+                    <label for="bhk">BHK</label>
+                    <input class="input" type="text" name="bhk" required>
+                </div>
+                <div class="inputfield">
+                    <label for="bath">Bath</label>
+                    <input class="input" type="text" name="bath" required>
+                </div>
+                
+                <div class="inputfield">
+                    <input class="btn" type="submit" value="Predict Price">
+                </div>
+            </div>
+        </form>
+
+        <div class="result">
+            {% if pred_value != 0 %}
+            <p>Estimated Price : LKR {{pred_value}}</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
